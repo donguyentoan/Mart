@@ -11,10 +11,7 @@
                             <p class="text-md font-black bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">New Product</p>
 
                         </div>
-                        <div class='flex'>
-                            <h1 class='pr-2 '>Duplicate</h1>
-                            <h1 class='pl-2 '>Preview</h1>
-                        </div>
+                        
                     </div>
 
                     <div class='flex mt-4'>
@@ -311,11 +308,11 @@
                                     </select>
 
                                 </div>
-
+                                <div>
+                                    <button class="p-3 w-full bg-red-400 text-white font-bold m-2 rounded-md" wire:click="saveProduct">Save Product</button>    
+                                    </div>  
                             </div>
-                            <div>
-                            <button class="p-1 bg-red-400 text-white m-2 rounded-md" wire:click="saveProduct">Save Product</button>    
-                            </div>  
+                            
                         </div>
                         @if(session('message'))
                         <script>
