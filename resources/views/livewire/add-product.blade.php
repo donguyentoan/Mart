@@ -196,8 +196,8 @@
                                                                     <div class="flex bg-[#f0f0f0] items-center rounded-lg relative">
                                                                         <div>
                                                                             <li class='w-fit  px-2 py-1 h-fit  text-black'>
-                                                                            <div class="text-[#6a6a6a] font-normal" > {{$variant['nameOption']}}
-                                                                                <div class=" border-[1px] absolute top-[-10px] right-[-10px] bg-white rounded-full" wire:click="removeVariantOption('{{$variant['nameOption']}}')">
+                                                                            <div class="text-[#6a6a6a] font-normal group" > {{$variant['nameOption']}}
+                                                                                <div class=" hidden group-hover:block border-[1px] absolute top-[-5px] right-[-6px] bg-white rounded-full" wire:click="removeVariantOption('{{$variant['nameOption']}}')">
                                                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-x font-bold" viewBox="0 0 16 16">
                                                                                         <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
                                                                                     </svg>
