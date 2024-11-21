@@ -186,40 +186,43 @@
                                          
                                             @if($dataVariantProducts)
                                             <h2 class='font-medium'>Variants List</h2>
-                                            @foreach ($dataVariantProducts as $variantName => $variants)
-                                                <div class='border p-2 mt-2 rounded-md bg-[#ededed69]'>
-                                                    <h3 class='font-bold text-md uppercase'>{{$variantName}}</h3>
-                                                    <div class='flex justify-between items-center'>
-                                                        <ul class='pt-4 grid grid-cols-7 gap-4'>
-                                                            @foreach ($variants as $variant) 
-                                                            <div class="flex bg-slate-300 items-center rounded-lg relative">
-                                                                <div>
-                                                                    <li class='w-fit  px-2 py-1 h-fit  text-black'>
-                                                                      <div > {{$variant['nameOption']}}
-                                                                        <div class="absolute top-[-10px] right-[-10px] bg-white rounded-full" wire:click="removeVariantOption('{{$variant['nameOption']}}')">
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-x font-bold" viewBox="0 0 16 16">
-                                                                                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
-                                                                              </svg>
-                                                                        </div>       
-                                                                    </div> 
-                                                                      
-                                                                    </li>
-                                                                </div>
-                                                               
-                                                               
+                                            <div class='border  mt-2 rounded-xl '>
+                                                @foreach ($dataVariantProducts as $variantName => $variants)
+                                                        <div class="border-b-[1px] p-3 rounded-xl">
+                                                            <h3 class='font-bold text-md uppercase'>{{$variantName}}</h3>
+                                                            <div class='flex justify-between items-center'>
+                                                                <ul class='pt-4 grid grid-cols-7 gap-4'>
+                                                                    @foreach ($variants as $variant) 
+                                                                    <div class="flex bg-[#f0f0f0] items-center rounded-lg relative">
+                                                                        <div>
+                                                                            <li class='w-fit  px-2 py-1 h-fit  text-black'>
+                                                                            <div class="text-[#6a6a6a] font-normal" > {{$variant['nameOption']}}
+                                                                                <div class=" border-[1px] absolute top-[-10px] right-[-10px] bg-white rounded-full" wire:click="removeVariantOption('{{$variant['nameOption']}}')">
+                                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-x font-bold" viewBox="0 0 16 16">
+                                                                                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                                                                                    </svg>
+                                                                                </div>       
+                                                                            </div> 
+                                                                            
+                                                                            </li>
+                                                                        </div>
+                                                                    
+                                                                    
+                                                                    </div>
+                                                                    
+                                                                    @endforeach
+                                                                </ul>
+                                                                <button
+                                                                    wire:click="editVariantProduct('{{$variantName}}')"
+                                                                    class='text-black font-medium border-[1px] px-[7px] px-[3px] rounded-md shadow-inner '
+                                                                >
+                                                                    {{ $isEditing && $editingVariantName === $variantName ? 'Editing...' : 'Edit' }}
+                                                                </button>
                                                             </div>
-                                                               
-                                                            @endforeach
-                                                        </ul>
-                                                        <button
-                                                            wire:click="editVariantProduct('{{$variantName}}')"
-                                                            class='text-red-400 '
-                                                        >
-                                                            {{ $isEditing && $editingVariantName === $variantName ? 'Editing...' : 'Edit' }}
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            @endforeach
+                                                        </div>
+                                                
+                                                @endforeach
+                                            </div>
                                         @endif
                                     
                                         
@@ -260,10 +263,10 @@
                                                         {{ $variant['name'] }}
                                                     </td>
                                                     <td class="px-4 py-3">
-                                                        <input wire:model="priceVariant.{{$index}}" class="border-[1px]" type="text" placeholder="Enter price" />
+                                                        <input wire:model="priceVariant.{{$index}}" class="border-[1px] border-black p-1 rounded-md" type="text" placeholder="Enter Price" />
                                                     </td>
                                                     <td class="px-4 py-3">
-                                                        <input wire:model="stockVariant.{{$index}}" class="border-[1px] w-12" type="text" />
+                                                        <input wire:model="stockVariant.{{$index}}" class="border-[1px] w-12 border-black p-1 rounded-md" type="text" placeholder="SL" />
                                                     </td>
                                                     
                                                     <td class="w-10 text-center">
