@@ -100,8 +100,9 @@
                                                 <input
                                                     wire:model="variantName"
                                                     wire:input="addInputVariants"
-                                                    class='border-[1px] w-full p-2 rounded-md'
+                                                    class='border-[1px] w-full p-2 rounded-md text-sm'
                                                     type="text"
+                                                    placeholder="Variant Name"
                                                    
                                                 />
                                             </div>
@@ -110,7 +111,7 @@
                                         @if($addInputVariants )
                                         <div>
                                             @foreach ($variants as $index => $variant)
-                                                <div class="variant_add_product border p-4 rounded mb-4 mt-3 rounded-md">
+                                                <div class="variant_add_product border p-4  mb-4 mt-3 rounded-lg">
                                                     <div class='flex justify-between items-center '>
                                                         @if($variant['image'])
                                                             <div>
@@ -156,9 +157,9 @@
                                         
                                                         <input
                                                             wire:model="variants.{{ $index }}.nameOption"
-                                                            class='border-[1px] {{ $variant["image"] ? "w-10/12" : "w-full" }} p-2 rounded-md mr-2'
+                                                            class='text-sm border-[1px] {{ $variant["image"] ? "w-10/12" : "w-full" }} p-2 rounded-md mr-2'
                                                             type="text"
-                                                            placeholder="Variant Name"
+                                                            placeholder="Option Name"
                                                         />
                                         
                                                         <button wire:click="addOptionVariant">
@@ -171,7 +172,7 @@
                                                    
                                                 </div>
                                             @endforeach
-                                            <button wire:click="saveCurrentVariant" class='mt-2 bg-blue-500 text-white p-2 rounded'>
+                                            <button wire:click="saveCurrentVariant" class='mt-2 bg-blue-500 text-sm text-white p-1 rounded'>
                                                 Save Variant
                                             </button>
                                         </div>
