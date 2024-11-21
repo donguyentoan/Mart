@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use Exception;
 use App\Models\Product;
 use App\Models\Variant;
 use Livewire\Component;
@@ -9,6 +10,8 @@ use App\Models\Attribute;
 use Livewire\WithFileUploads;
 use App\Models\ProductAttribute;
 use App\Models\VariantAttribute;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 
 class AddProduct extends Component
@@ -115,54 +118,63 @@ class AddProduct extends Component
   public function saveProduct()
 {
     // Tạo sản phẩm chính
-    $product = Product::create([
-        "name" => $this->name,
-        "description" => $this->description,
-        "image" => $this->imageUrl,
-        "stock" => $this->stock,
-        "price" => $this->price,
-    ]);
-
-    // Tạo attributes trước
-    $attributesMap = [];
-    foreach ($this->dataVariantProducts as $attributeName => $attributeValues) {
-        $attribute = Attribute::create([
-            "name" => $attributeName,
+    try {
+        // Tạo sản phẩm chính
+        $product = Product::create([
+            "name" => $this->name,
+            "description" => $this->description,
+            "image" => $this->imageUrl,
+            "stock" => $this->stock,
+            "price" => $this->price,
         ]);
-
-        ProductAttribute::create([
-            "attribute_id" => $attribute->id,
-            "product_id" => $product->id,
-        ]);
-
-        $attributesMap[$attributeName] = $attribute->id;
-    }
-
-    // Tạo variants và variant attributes
-    foreach ($this->combinations as $index => $combination) {
-        // Tạo variant
-        $variant = Variant::create([
-            "product_id" => $product->id,
-            "price" => $this->priceVariant[$index] ?? $this->price,
-            "sku" => "COMB-" . $product->id . "-" . uniqid(),
-            "stock" => $this->stockVariant[$index] ?? 0,
-            "image" => implode(',', array_filter($combination['images'])),
-        ]);
-
-        // Tách tên combination để lấy các giá trị thuộc tính
-        $values = explode('-', $combination['name']);
-        $i = 0;
-        
-        // Tạo variant attributes cho từng thuộc tính
+    
+        // Tạo attributes trước
+        $attributesMap = [];
         foreach ($this->dataVariantProducts as $attributeName => $attributeValues) {
-            VariantAttribute::create([
-                "value" => $values[$i],
-                "attribute_id" => $attributesMap[$attributeName],
-                "variant_id" => $variant->id,
+            $attribute = Attribute::create([
+                "name" => $attributeName,
             ]);
-            $i++;
+    
+            ProductAttribute::create([
+                "attribute_id" => $attribute->id,
+                "product_id" => $product->id,
+            ]);
+    
+            $attributesMap[$attributeName] = $attribute->id;
         }
+    
+        // Tạo variants và variant attributes
+        foreach ($this->combinations as $index => $combination) {
+            // Tạo variant
+            $variant = Variant::create([
+                "product_id" => $product->id,
+                "price" => $this->priceVariant[$index] ?? $this->price,
+                "sku" => "COMB-" . $product->id . "-" . uniqid(),
+                "stock" => $this->stockVariant[$index] ?? 0,
+                "image" => implode(',', array_filter($combination['images'])),
+            ]);
+    
+            // Tách tên combination để lấy các giá trị thuộc tính
+            $values = explode('-', $combination['name']);
+            $i = 0;
+    
+            // Tạo variant attributes cho từng thuộc tính
+            foreach ($this->dataVariantProducts as $attributeName => $attributeValues) {
+                VariantAttribute::create([
+                    "value" => $values[$i],
+                    "attribute_id" => $attributesMap[$attributeName],
+                    "variant_id" => $variant->id,
+                ]);
+                $i++;
+            }
+        }
+        return Redirect('/add-product')->with("message", "Tạo Đơn Hàng Thành Công");
+
+    } catch (Exception $e) {
+        // Handle the exception, e.g., log the error or return a response
+        Log::error("Error creating product: " . $e->getMessage());
     }
+    
 }
     public function editVariantProduct($nameEditVariant)
     {

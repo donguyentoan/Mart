@@ -8,10 +8,11 @@
                             <p class='pr-4'> <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-left-square-fill" viewBox="0 0 16 16">
                                 <path d="M16 14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2zm-4.5-6.5H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5a.5.5 0 0 0 0-1" />
                             </svg> </p>
-                            <p class='text-md font-black'>New Product</p>
+                            <p class="text-md font-black bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">New Product</p>
+
                         </div>
                         <div class='flex'>
-                            <h1 class='pr-2'>Duplicate</h1>
+                            <h1 class='pr-2 '>Duplicate</h1>
                             <h1 class='pl-2 '>Preview</h1>
                         </div>
                     </div>
@@ -23,19 +24,19 @@
                                 <form class='w-full' action="" onSubmit={createVariantProduct}>
                                     <div class=' bg-white p-4 rounded-xl shadow-inner'>
                                         <div class='pt-4'>
-                                            <h1 class='font-bold text-sm '>Title</h1>
+                                            <h1 class='font-bold text-sm bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent '>Title</h1>
                                             <input class='border-[1px] w-full p-1  rounded-md' type="text" wire:model="name" name="name" id="" />
                                         </div>
                                         <div class='pt-4'>
-                                            <h1 class='font-bold text-sm  '>Price</h1>
+                                            <h1 class='font-bold text-sm bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent '>Price</h1>
                                             <input class='border-[1px] w-full p-1  rounded-md' type="text" wire:model="price" name="price" id="" />
                                         </div>
                                         <div class='pt-4'>
-                                            <h1 class='font-bold text-sm '>Stock</h1>
+                                            <h1 class='font-bold text-sm bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent'>Stock</h1>
                                             <input class='border-[1px] w-full p-1  rounded-md' type="text" wire:model="stock" name="stock" id="" />
                                         </div>
                                         <div class='pt-4'>
-                                            <h1 class='font-bold text-sm '>Description</h1>
+                                            <h1 class='font-bold text-sm bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent'>Description</h1>
                                           {{-- <div class='editor'>
                                                 <TextEditor />
                                             </div> --}}
@@ -53,8 +54,8 @@
                            
                             <div class=' bg-white p-4 rounded-xl shadow-inner mt-4'>
                                 <div class='pt-4 flex justify-between '>
-                                    <h1 class='text-sm font-medium'>Media</h1>
-                                    <button class="text-sm">Add Media from URL</button>
+                                    <h1 class='text-sm font-bold bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent'>Media</h1>
+                                    <button class="text-sm bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">Add Media from URL</button>
                                 </div>
                                 <div class='flex justify-between pt-4'>
                                     <div class='border-2 w-full h-[335px] border-dashed mr-2 flex justify-center items-center'
@@ -84,7 +85,7 @@
                             <div class=' bg-white p-4 rounded-xl shadow-inner mt-4'>
                                 <div class='pt-4 flex items-center '>
                                     <input wire:change="addVariant" class='w-4 h-4' type="checkbox" name="" id="" />
-                                    <h1 class='font-medium text-sm pl-4'>Add  Variant Product</h1>
+                                    <h1 class='font-bold text-sm pl-4 bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent'>Add  Variant Product</h1>
 
                                 </div>
                                @if($showAddVariant)
@@ -93,8 +94,8 @@
                                         <div>
                                             <div class='pt-4'>
                                                 <div class='flex justify-between '>
-                                                    <h3 class='font-medium text-sm'>Variant Name</h3>
-                                                    <h3 class="text-sm font-medium" wire:click="addImageVariant" > Add image</h3>
+                                                    <h3 class='font-bold text-sm bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent'>Variant Name</h3>
+                                                    <h3 class="text-sm font-bold bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent" wire:click="addImageVariant" > Add image</h3>
                                                 </div>
                                              
                                                 <input
@@ -185,7 +186,7 @@
                                         <div class='mt-4'>
                                          
                                             @if($dataVariantProducts)
-                                            <h2 class='font-medium'>Variants List</h2>
+                                            <h2 class='font-bold bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent'>Variants List</h2>
                                             <div class='border  mt-2 rounded-xl '>
                                                 @foreach ($dataVariantProducts as $variantName => $variants)
                                                         <div class="border-b-[1px] p-3 last:border-0">
@@ -237,7 +238,7 @@
                             @if($isPreviewVariant)
                             <div class=' bg-white p-4 rounded-xl shadow-inner '>
                                 <div class='pt-4'>
-                                    <h1 class='font-medium'>Preview</h1>
+                                    <h1 class='font-bold bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent'>Preview</h1>
 
                                 </div>
                                 <form action="" onSubmit={saveVariant}>
@@ -246,12 +247,12 @@
 
                                             <thead>
                                                 <tr>
-                                                    <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 rounded-tl rounded-bl">Variant</th>
-                                                    <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">Price</th>
-                                                    <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">Quantity</th>
-                                                    <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">SKU</th>
+                                                    <th class="px-4 py-3 title-font tracking-wider font-bold text-gray-900 text-sm bg-gray-100 rounded-tl rounded-bl">Variant</th>
+                                                    <th class="px-4 py-3 title-font tracking-wider font-bold text-gray-900 text-sm bg-gray-100">Price</th>
+                                                    <th class="px-4 py-3 title-font tracking-wider font-bold text-gray-900 text-sm bg-gray-100">Quantity</th>
+                                                    <th class="px-4 py-3 title-font tracking-wider font-bold text-gray-900 text-sm bg-gray-100">SKU</th>
 
-                                                    <th class="w-10 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 rounded-tr rounded-br"></th>
+                                                    <th class="w-10 title-font tracking-wider font-bold text-gray-900 text-sm bg-gray-100 rounded-tr rounded-br"></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -263,10 +264,10 @@
                                                         {{ $variant['name'] }}
                                                     </td>
                                                     <td class="px-4 py-3">
-                                                        <input wire:model="priceVariant.{{$index}}" class="border-[1px] border-black p-1 rounded-md" type="text" placeholder="Enter Price" />
+                                                        <input wire:model="priceVariant.{{$index}}" class="border-[1px]  p-[2px] rounded-md" type="text" placeholder="Enter Price" />
                                                     </td>
                                                     <td class="px-4 py-3">
-                                                        <input wire:model="stockVariant.{{$index}}" class="border-[1px] w-12 border-black p-1 rounded-md" type="text" placeholder="SL" />
+                                                        <input wire:model="stockVariant.{{$index}}" class="border-[1px] w-12  p-[2px] rounded-md" type="text" placeholder="SL" />
                                                     </td>
                                                     
                                                     <td class="w-10 text-center">
@@ -300,11 +301,11 @@
                             @endif
 
                         </div>
-
+                       
                         <div class='w-1/3 ml-4' >
                             <div class='bg-white p-4 rounded-xl shadow-inner'>
                                 <div class='w-full'>
-                                    <h1 class='text-md font-semibold'>Product Status</h1>
+                                    <h1 class='text-md font-semibold bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent'>Product Status</h1>
                                     <select class='w-full border-[1px] rounded-lg p-2 my-4' name="" id="">
                                         <option value="">Draw</option>
                                     </select>
@@ -316,6 +317,18 @@
                             <button class="p-1 bg-red-400 text-white m-2 rounded-md" wire:click="saveProduct">Save Product</button>    
                             </div>  
                         </div>
+                        @if(session('message'))
+                        <script>
+                            Swal.fire({
+                                position: "top-center",
+                                icon: "success",
+                                title: "{{ session('message') }}",
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                        </script>
+                    @endif
+                    
 
                     </div>
 

@@ -17,6 +17,7 @@
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Main Styling -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="./assets/css/soft-ui-dashboard-tailwind.css?v=1.0.5" rel="stylesheet" />    
     <!-- Nepcha Analytics (nepcha.com) -->
     <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
@@ -488,6 +489,7 @@
         </div>
       </div>
     </div>
+    
     @livewireScripts
     <script src="./assets/js/plugins/chartjs.min.js" async></script>
     <!-- plugin for scrollbar  -->
@@ -496,6 +498,7 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- main script file  -->
     <script src="./assets/js/soft-ui-dashboard-tailwind.js?v=1.0.5" async></script>
+    
   </body>
 
 </html>
