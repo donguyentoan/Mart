@@ -5,10 +5,10 @@
                 <div class='w-full mx-auto p-6'>
                     <div class='flex items-center justify-between'>
                         <div class=' flex '>
-                            <p class='pr-4'> <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-arrow-left-square-fill" viewBox="0 0 16 16">
+                            <p class='pr-4'> <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-left-square-fill" viewBox="0 0 16 16">
                                 <path d="M16 14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2zm-4.5-6.5H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5a.5.5 0 0 0 0-1" />
                             </svg> </p>
-                            <p class='text-3xl font-black'>New Product</p>
+                            <p class='text-md font-black'>New Product</p>
                         </div>
                         <div class='flex'>
                             <h1 class='pr-2'>Duplicate</h1>
@@ -23,19 +23,19 @@
                                 <form class='w-full' action="" onSubmit={createVariantProduct}>
                                     <div class=' bg-white p-4 rounded-xl shadow-inner'>
                                         <div class='pt-4'>
-                                            <h1 class='font-bold text-xl mb-2'>Title</h1>
-                                            <input class='border-2 w-full p-3  rounded-md' type="text" wire:model="name" name="name" id="" />
+                                            <h1 class='font-bold text-sm '>Title</h1>
+                                            <input class='border-[1px] w-full p-1  rounded-md' type="text" wire:model="name" name="name" id="" />
                                         </div>
                                         <div class='pt-4'>
-                                            <h1 class='font-bold text-xl mb-2 '>Price</h1>
-                                            <input class='border-2 w-full p-2 rounded-md' type="text" wire:model="price" name="price" id="" />
+                                            <h1 class='font-bold text-sm  '>Price</h1>
+                                            <input class='border-[1px] w-full p-1  rounded-md' type="text" wire:model="price" name="price" id="" />
                                         </div>
                                         <div class='pt-4'>
-                                            <h1 class='font-bold text-xl mb-2'>Stock</h1>
-                                            <input class='border-2 w-full p-2 rounded-md' type="text" wire:model="stock" name="stock" id="" />
+                                            <h1 class='font-bold text-sm '>Stock</h1>
+                                            <input class='border-[1px] w-full p-1  rounded-md' type="text" wire:model="stock" name="stock" id="" />
                                         </div>
                                         <div class='pt-4'>
-                                            <h1 class='font-bold text-xl mb-2'>Description</h1>
+                                            <h1 class='font-bold text-sm '>Description</h1>
                                           {{-- <div class='editor'>
                                                 <TextEditor />
                                             </div> --}}
