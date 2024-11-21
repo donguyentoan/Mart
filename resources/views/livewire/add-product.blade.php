@@ -92,7 +92,7 @@
                                      
                                         <div>
                                             <div class='pt-4'>
-                                                <div class='flex justify-between'>
+                                                <div class='flex justify-between text-sm'>
                                                     <h3 class='font-medium'>Variant Name</h3>
                                                     <h3 wire:click="addImageVariant" > Add image</h3>
                                                 </div>
@@ -100,7 +100,7 @@
                                                 <input
                                                     wire:model="variantName"
                                                     wire:input="addInputVariants"
-                                                    class='border-[1px] w-full p-2 rounded-md text-sm'
+                                                    class='border-[1px] w-full p-2 rounded-md  placeholder:text-sm'
                                                     type="text"
                                                     placeholder="Variant Name"
                                                    
@@ -157,7 +157,7 @@
                                         
                                                         <input
                                                             wire:model="variants.{{ $index }}.nameOption"
-                                                            class='text-sm border-[1px] {{ $variant["image"] ? "w-10/12" : "w-full" }} p-2 rounded-md mr-2'
+                                                            class='placeholder:text-sm border-[1px] {{ $variant["image"] ? "w-10/12" : "w-full" }} p-2 rounded-md mr-2'
                                                             type="text"
                                                             placeholder="Option Name"
                                                         />
