@@ -52,9 +52,9 @@
                             </div>
                            
                             <div class=' bg-white p-4 rounded-xl shadow-inner mt-4'>
-                                <div class='pt-4 flex justify-between text-sm'>
-                                    <h1 class='font-medium'>Media</h1>
-                                    <button>Add Media from URL</button>
+                                <div class='pt-4 flex justify-between '>
+                                    <h1 class='text-sm font-medium'>Media</h1>
+                                    <button class="text-sm">Add Media from URL</button>
                                 </div>
                                 <div class='flex justify-between pt-4'>
                                     <div class='border-2 w-full h-[335px] border-dashed mr-2 flex justify-center items-center'
@@ -82,9 +82,9 @@
 
                             </div>
                             <div class=' bg-white p-4 rounded-xl shadow-inner mt-4'>
-                                <div class='pt-4 flex items-center text-sm'>
+                                <div class='pt-4 flex items-center '>
                                     <input wire:change="addVariant" class='w-5 h-5' type="checkbox" name="" id="" />
-                                    <h1 class='font-medium  pl-4'>Add  Variant Product</h1>
+                                    <h1 class='font-medium text-sm pl-4'>Add  Variant Product</h1>
 
                                 </div>
                                @if($showAddVariant)
@@ -92,15 +92,15 @@
                                      
                                         <div>
                                             <div class='pt-4'>
-                                                <div class='flex justify-between text-sm'>
-                                                    <h3 class='font-medium'>Variant Name</h3>
-                                                    <h3 wire:click="addImageVariant" > Add image</h3>
+                                                <div class='flex justify-between '>
+                                                    <h3 class='font-medium text-sm'>Variant Name</h3>
+                                                    <h3 class="text-sm font-medium" wire:click="addImageVariant" > Add image</h3>
                                                 </div>
                                              
                                                 <input
                                                     wire:model="variantName"
                                                     wire:input="addInputVariants"
-                                                    class='border-[1px] w-full p-2 rounded-md  placeholder:text-xs'
+                                                    class='border-[1px] w-full p-1 rounded-md  placeholder:text-xs'
                                                     type="text"
                                                     placeholder="Variant Name"
                                                    
@@ -157,7 +157,7 @@
                                         
                                                         <input
                                                             wire:model="variants.{{ $index }}.nameOption"
-                                                            class='placeholder:text-xs border-[1px] {{ $variant["image"] ? "w-10/12" : "w-full" }} p-2 rounded-md mr-2'
+                                                            class='placeholder:text-xs border-[1px] {{ $variant["image"] ? "w-10/12" : "w-full" }} p-1 rounded-md mr-2'
                                                             type="text"
                                                             placeholder="Option Name"
                                                         />
@@ -299,8 +299,8 @@
                         <div class='w-1/3 ml-4' >
                             <div class='bg-white p-4 rounded-xl shadow-inner'>
                                 <div class='w-full'>
-                                    <h1 class='text-xl font-semibold'>Product Status</h1>
-                                    <select class='w-full border-2 p-2 my-4' name="" id="">
+                                    <h1 class='text-md font-semibold'>Product Status</h1>
+                                    <select class='w-full border-[1px] rounded-lg p-2 my-4' name="" id="">
                                         <option value="">Draw</option>
                                     </select>
 
@@ -308,7 +308,7 @@
 
                             </div>
                             <div>
-                            <button class="p-2 bg-red-400 text-white m-2 rounded-md" wire:click="saveProduct">Save Product</button>    
+                            <button class="p-1 bg-red-400 text-white m-2 rounded-md" wire:click="saveProduct">Save Product</button>    
                             </div>  
                         </div>
 
