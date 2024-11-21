@@ -136,7 +136,7 @@
                       <thead class="align-bottom">
                         <tr>
                           <th class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Author</th>
-                          <th class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Author2</th>
+
                           <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Function</th>
                           <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Status</th>
                           <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Employed</th>
@@ -157,17 +157,7 @@
                                 </div>
                               </div>
                             </td>
-                          <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex px-2 py-1">
-                              <div>
-                                <img src="../assets/img/team-2.jpg" class="inline-flex items-center justify-center mr-4 text-sm text-white transition-all duration-200 ease-soft-in-out h-9 w-9 rounded-xl" alt="user1">
-                              </div>
-                              <div class="flex flex-col justify-center">
-                                <h6 class="mb-0 text-sm leading-normal">{{$item['name']}}</h6>
-                                <p class="mb-0 text-xs leading-tight text-slate-400">{{$item['description']}}</p>
-                              </div>
-                            </div>
-                          </td>
+                         
                           <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                             <p class="mb-0 text-xs font-semibold leading-tight">Price</p>
                             <p class="mb-0 text-xs leading-tight text-slate-400">{{$item['price']}}</p>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Product;
 use Livewire\Component;
 
 class ListManager extends Component
@@ -16,23 +17,7 @@ class ListManager extends Component
 
     public function getListManager($product){
         if($product == "products"){
-            $this->data = [
-                [
-                    "name" => "toan",
-                    "price" => 10000,
-                    "description" => "chao cac ban"
-                ],
-                [
-                    "name" => "toan1",
-                    "price" => 10000,
-                    "description" => "chao cac ban1"
-                ],
-                [
-                    "name" => "toan3",
-                    "price" => 10000,
-                    "description" => "chao cac ban3"
-                ]
-            ];
+            $this->data = Product::all();
         }
         else if($product == "order"){
             $this->data = [
