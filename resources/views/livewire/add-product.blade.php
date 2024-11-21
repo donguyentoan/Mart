@@ -39,7 +39,7 @@
                                           {{-- <div class='editor'>
                                                 <TextEditor />
                                             </div> --}}
-                                            <textarea cols="15" rows="8" class='rounded-md font-bold text-xl mb-2 border-[1px]' wire:model="description" name="description" id="">
+                                            <textarea rows="5" class='w-full rounded-md font-bold text-xl mb-2 border-[1px]' wire:model="description" name="description" id="">
 
                                             </textarea>
 
@@ -52,12 +52,12 @@
                             </div>
                            
                             <div class=' bg-white p-4 rounded-xl shadow-inner mt-4'>
-                                <div class='pt-4 flex justify-between'>
+                                <div class='pt-4 flex justify-between text-sm'>
                                     <h1 class='font-medium'>Media</h1>
-                                    <a href="">Add Media from URL</a>
+                                    <button>Add Media from URL</button>
                                 </div>
                                 <div class='flex justify-between pt-4'>
-                                    <div class='border-2 w-full h-[500px] border-dashed mr-2 flex justify-center items-center'
+                                    <div class='border-2 w-full h-[335px] border-dashed mr-2 flex justify-center items-center'
                                          style="background-image: url('{{ asset('storage/' . $imageUrl) }}'); background-size: cover; background-position: center;">
                                         <input
                                             id="fileInputImage"
@@ -82,9 +82,9 @@
 
                             </div>
                             <div class=' bg-white p-4 rounded-xl shadow-inner mt-4'>
-                                <div class='pt-4 flex items-center'>
+                                <div class='pt-4 flex items-center text-sm'>
                                     <input wire:change="addVariant" class='w-5 h-5' type="checkbox" name="" id="" />
-                                    <h1 class='font-medium text-md pl-4'>Add  Variant Product</h1>
+                                    <h1 class='font-medium  pl-4'>Add  Variant Product</h1>
 
                                 </div>
                                @if($showAddVariant)
@@ -100,7 +100,7 @@
                                                 <input
                                                     wire:model="variantName"
                                                     wire:input="addInputVariants"
-                                                    class='border-2 w-full p-2 rounded-md'
+                                                    class='border-[1px] w-full p-2 rounded-md'
                                                     type="text"
                                                    
                                                 />
@@ -111,7 +111,7 @@
                                         <div>
                                             @foreach ($variants as $index => $variant)
                                                 <div class="variant_add_product border p-4 rounded mb-4 mt-3 rounded-md">
-                                                    <div class='flex justify-between items-center mt-5'>
+                                                    <div class='flex justify-between items-center '>
                                                         @if($variant['image'])
                                                             <div>
                                                                 <input
@@ -156,7 +156,7 @@
                                         
                                                         <input
                                                             wire:model="variants.{{ $index }}.nameOption"
-                                                            class='border-2 {{ $variant["image"] ? "w-10/12" : "w-full" }} p-2 rounded-md mr-2'
+                                                            class='border-[1px] {{ $variant["image"] ? "w-10/12" : "w-full" }} p-2 rounded-md mr-2'
                                                             type="text"
                                                             placeholder="Variant Name"
                                                         />
